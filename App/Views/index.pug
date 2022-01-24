@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta( charset="UTF-8" )
+    meta( http-equiv="X-UA-Compatible", content="ie=edge" )
+    meta( name="viewport",   content="width=device-width, initial-scale=1.0" )
+    meta( name="author"      content="Yago Estévez" )
+    meta( name="description" content="A project for freeCodeCamp certification" )
+    meta( name="keywords"    content="freecodecamp, nodejs, node, express, javascript, mongodb, mongoose" )
+    link( rel="stylesheet"   href="/assets/main.css" )
+    link( rel="stylesheet"   href="/assets/bootstrap-4.1.2.min.css" )
+    link( rel="stylesheet"   href="https://fonts.googleapis.com/css?family=Markazi+Text" )
+    title Stock Price Checker by Yago Estévez
+  body.text-center
+    #main.container-fluid
+      .row
+        .col-12.col-sm-3.col-lg-4
+        .col-12.col-sm-6.col-lg-4.mb-4
+          img( src="https://d33wubrfki0l68.cloudfront.net/4ba4ee4d1ac4caf5c0c3fa44ccc8fddd5bd11222/3f5b1/img/freecodecamp-alternative.png" alt="FreeCodeCamp Logo" )
+          h1.font-weight-normal Stock Price Checker
+        .col-12.col-sm-3.col-lg-4
+      .row
+        .col-12.col-lg-6.mb-3
+          .card
+            .card-header.bg-primary.text-white Get single stock price and total likes
+            .card-body
+              form#single-stock-form.form( method="get" action="/api/stock-price" )
+                .input-group-append
+                  input#single-input.form-control( type="text" aria-label="Checkbox" placeholder="Type a stock (e.g. GOOG, MSFT, FB, etc)" required )
+                  .input-group-text
+                    span Like? &nbsp;
+                    input#single-like( type="checkbox" aria-label="Like this stock" )
+                button#single-search-btn.btn.btn-outline-primary.w-100.mt-3( type="button") Search
+        .col-12.col-lg-6
+          .card
+            .card-header.bg-primary.text-white Get two stock prices and their relative likes
+            .card-body
+              form#multi-stock-form.form( method="get" action="/api/stock-price" )
+                .input-group-append
+                  input#multi-input1.form-control( type="text" aria-label="Checkbox" placeholder="Type a stock (e.g. GOOG, MSFT, FB, etc)" required )
+                  input#multi-input2.form-control( type="text" aria-label="Checkbox" placeholder="Type a stock (e.g. GOOG, MSFT, FB, etc)" required )
+                  .input-group-text
+                    span Like both? &nbsp;
+                    input#multi-like( type="checkbox" aria-label="Like both these stocks" )
+                button#multi-search-btn.btn.btn-outline-primary.w-100.mt-3( type="button") Search
+      .row.mt-5.text-center
+        .col-12
+          .card#card-results
+            .card-body
+              code#results
+    footer.mt-5
+      hr
+      p.mt-2.mb-0 Data provided for free by #[a(href="https://iextrading.com/developer") IEX]. #[a(href="https://iextrading.com/api-exhibit-a/") View IEX’s Terms of Use].
+      p.mb-2 coded by 
+        a( href="https://twitter.com/yagoestevez" target="_blank" ) Yago Estévez
+
+    script( src="/assets/main.js" )
